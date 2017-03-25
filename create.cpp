@@ -56,7 +56,7 @@ int main()
   xml_node<>* child_e = root_e->first_node("child");
   xml_attribute<>* atr_child = child_e->first_attribute();
   
-  atr_child->value("ALA MA KOTA");
+  atr_child->value("EXAMPLEx2");
   ofstream save_file("doc/file3_a.xml");
   save_file<<doc;
   save_file.close();

@@ -60,6 +60,7 @@ int main()
   ofstream save_file("doc/file3_a.xml");
   save_file<<doc;
   save_file.close();
+  delete[] buffor;
 
   
   return 0;

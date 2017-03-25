@@ -10,9 +10,9 @@ using namespace rapidxml;
 using namespace std;
 int main()
 {
-  char *buff = new char[100];
+ // ofstream fileXML;
+ // fileXML.open("doc/new.xml");
   xml_document<> doc;
-  doc.parse<0>(buff);
 
   xml_node<>* xml_dec = doc.allocate_node(node_declaration);
   xml_dec->append_attribute(doc.allocate_attribute("version","1.0"));
@@ -30,10 +30,37 @@ int main()
   down->append_attribute(doc.allocate_attribute("test","12345"));
   child->append_node(down);
 
-  ofstream file_xml("doc/file2.xml");
+  ofstream file_xml("doc/file3.xml");
+ // char* buffor;
+  //doc
   file_xml<<doc;
   file_xml.close();
   doc.clear();
+
+  //xml_document<> doc;
+  ifstream open_file;
+  open_file.open("doc/file3.xml");
+  open_file.seekg(0, open_file.end);
+  uint16_t length = open_file.tellg();
+  open_file.seekg(0, open_file.beg);
+  char* buffor = new char[length+1];
+  open_file.read(buffor, length);
+
+  buffor[length]='\0';
+
+  open_file.close();
+
+  doc.parse<0>(buffor);
+  xml_node<>* root_e = doc.first_node("rootDate");
+  
+  xml_node<>* child_e = root_e->first_node("child");
+  xml_attribute<>* atr_child = child_e->first_attribute();
+  
+  atr_child->value("ALA MA KOTA");
+  ofstream save_file("doc/file3_a.xml");
+  save_file<<doc;
+  save_file.close();
+
   
   return 0;
 }

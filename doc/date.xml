@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Date>
+  <Person who="Adam" number="1234567" id="001103">
+    <ability year="1994" month="5" day="31"></ability>
+    <solary start="2013" based="2000" date_wages="10"></solary>
+    <contract start="2016" end="2019"></contract>
+  </Person>
+
+  <Person who="Marek" number="2222222" id="001104">
+    <ability year="1992" month="5" day="20"></ability>
+    <solary start="2013" based="4000" date_wages="10"></solary>
+    <contract start="2014" end="2017"></contract>
+  </Person>
+
+  <Person who="Pawel" number="3333333" id="001105">
+    <ability year="1991" month="1" day="5"></ability>
+    <solary start="2010" based="3000" date_wages="10"></solary>
+    <contract start="2015" end="2018"></contract>
+  </Person>
+</Date>
